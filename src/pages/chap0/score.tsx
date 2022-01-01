@@ -1,10 +1,10 @@
 import { GetStaticProps, NextPage } from 'next'
 
-import { Page, PageHeader } from '../../components/Page'
+import { Page } from '../../components/Page'
 
 const ScorePage: NextPage = () => (
-  <Page index={2}>
-    <PageHeader>Score</PageHeader>
+  <Page slug="score">
+    Score
   </Page>
 )
 export const getStaticProps: GetStaticProps = () => ({

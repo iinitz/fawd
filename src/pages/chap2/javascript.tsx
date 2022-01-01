@@ -1,7 +1,7 @@
 import { GetStaticProps, NextPage } from 'next'
 
 import { Code } from '../../components/Code'
-import { Page, PageHeader, PageSubSection } from '../../components/Page'
+import { Page, PageSubSection } from '../../components/Page'
 import { PageSection } from '../../components/Page/PageSection'
 
 const letConstCode = `
@@ -14,8 +14,7 @@ pet = 'Dog' // Error: Uncaught TypeError: Assignment to constant variable.
 console.log(pet) // Cat
 `
 const JavaScriptPage: NextPage = () => (
-  <Page index={8}>
-    <PageHeader>JavaScript</PageHeader>
+  <Page slug="javascript">
     <PageSection id="variable" title="Variable">
       <PageSubSection title="let vs const" />
       <Code language="javascript" code={letConstCode} />

@@ -19,7 +19,6 @@ import { useTheme } from '../../contexts/ThemeContext'
 import { ThemeMode } from '../../types'
 import { AppBar } from '../@mui/AppBar'
 import { ListItemButton } from '../@mui/ListItemButton'
-import { ScrollTop } from '../@mui/ScrollTop'
 import { ThemeSwitch } from '../@mui/ThemeSwitch'
 import { SidebarMenu } from '../SidebarMenu'
 
@@ -146,10 +145,9 @@ export const AppLayout: React.FC<IAppLayoutProps> = memo(({ window, children }: 
           height: '100vh',
         }}
       >
-        <Toolbar id="top" />
+        <Toolbar />
         {children}
       </Box>
-      <ScrollTop />
     </Box>
   )
 })

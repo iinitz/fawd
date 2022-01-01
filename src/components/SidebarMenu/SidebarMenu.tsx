@@ -10,16 +10,16 @@ import { ListItemButton } from '../@mui/ListItemButton'
 
 export const SidebarMenu = () => (
   <Fragment>
-    {Object.entries(menus).map(([key, value]) => (
-      <Fragment key={key}>
+    {Object.entries(menus).map(([group, title]) => (
+      <Fragment key={group}>
         <List
           subheader={(
-            <ListSubheader>{value}</ListSubheader>
+            <ListSubheader>{title}</ListSubheader>
           )}
         >
-          {pages.filter((page) => page.group === key).map((page) => (
-            <ListItem disablePadding key={page.url}>
-              <ListItemButton href={`/${page.group}${page.url}`}>
+          {Object.entries(pages).filter(([_, page]) => page.group === group).map(([slug, page]) => (
+            <ListItem disablePadding key={slug}>
+              <ListItemButton href={`/${page.group}/${slug}`}>
                 <ListItemText primary={page.title} />
               </ListItemButton>
             </ListItem>

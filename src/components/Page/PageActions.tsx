@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography'
 import { useRouter } from 'next/router'
 import { useCallback, useMemo } from 'react'
 
-import { pages } from '../../contents'
+import { pages, slugs } from '../../contents'
 
 export declare interface IPageActionsProps {
   index: number
@@ -13,11 +13,23 @@ export declare interface IPageActionsProps {
 export const PageActions: React.FC<IPageActionsProps> = ({ index }: IPageActionsProps) => {
   const router = useRouter()
   const back = useMemo(
-    () => pages[index - 1],
+    () => {
+      const slug = slugs[index - 1]
+      return {
+        ...pages[slug],
+        slug,
+      }
+    },
     [index],
   )
   const next = useMemo(
-    () => pages[index + 1],
+    () => {
+      const slug = slugs[index + 1]
+      return {
+        ...pages[slug],
+        slug,
+      }
+    },
     [index],
   )
   const handleRedirect = useCallback(
@@ -30,11 +42,11 @@ export const PageActions: React.FC<IPageActionsProps> = ({ index }: IPageActions
     <Box>
       <Divider sx={{ mb: 2 }} />
       <Box display="flex" sx={{ pb: 2 }}>
-        {back ? (
+        {back.slug ? (
           <Button
             variant="outlined"
             fullWidth
-            onClick={handleRedirect(`/${back.group}${back.url}`)}
+            onClick={handleRedirect(`/${back.group}/${back.slug}`)}
             sx={{
               display: 'flex',
               flexDirection: 'column',
@@ -47,11 +59,11 @@ export const PageActions: React.FC<IPageActionsProps> = ({ index }: IPageActions
           </Button>
         ) : null}
         <Box flexGrow={1} sx={{ minWidth: { sm: '30%' } }} />
-        {next ? (
+        {next.slug ? (
           <Button
             variant="outlined"
             fullWidth
-            onClick={handleRedirect(`/${next.group}${next.url}`)}
+            onClick={handleRedirect(`/${next.group}/${next.slug}`)}
             sx={{
               display: 'flex',
               flexDirection: 'column',

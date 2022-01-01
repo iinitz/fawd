@@ -1,10 +1,10 @@
 import { GetStaticProps, NextPage } from 'next'
 
-import { Page, PageHeader } from '../../components/Page'
+import { Page } from '../../components/Page'
 
 const IntroductionPage: NextPage = () => (
-  <Page index={0}>
-    <PageHeader>Introduction</PageHeader>
+  <Page slug="introduction">
+    Introduction
   </Page>
 )
 export const getStaticProps: GetStaticProps = () => ({

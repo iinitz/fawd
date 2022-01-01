@@ -1,34 +1,71 @@
-type Group = 'chap0' | 'chap1' | 'chap2' | 'chap3' | 'chap4' | 'chap5' | 'chap6' | 'project'
-interface IPage {
-  title: string
-  url: string
-  group: Group
+export const groups = [
+  'chap0',
+  'chap1',
+  'chap2',
+  'chap3',
+  'chap4',
+  'chap5',
+  'chap6',
+  'project',
+] as const
+export const slugs = [
+  'introduction',
+  'outline',
+  'score',
+  'web1',
+  'web2',
+  'web3',
+  'tools',
+  'html-css',
+  'javascript',
+  'typescript',
+  'react',
+  'component',
+  'props-state',
+  'hooks',
+  'deploy',
+  'graphql',
+  'jwt',
+  'https',
+  'password',
+  'midterm',
+  'final',
+] as const
+
+export type Group = typeof groups[number]
+export type Slug = typeof slugs[number]
+export type Pages = {
+  [x in Slug]: {
+    title: string
+    group: Group
+  }
 }
-export const pages: IPage[] = [
-  { title: 'Introduction', url: '/introduction', group: 'chap0' },
-  { title: 'Course outline', url: '/outline', group: 'chap0' },
-  { title: 'Score', url: '/score', group: 'chap0' },
-  { title: 'History of web', url: '/web1', group: 'chap1' },
-  { title: 'Current web technologies', url: '/web2', group: 'chap1' },
-  { title: 'Future and trends of web', url: '/web3', group: 'chap1' },
-  { title: 'Web developer tools', url: '/tools', group: 'chap2' },
-  { title: 'Basic web (HTML, CSS)', url: '/html-css', group: 'chap2' },
-  { title: 'JavaScript', url: '/javascript', group: 'chap2' },
-  { title: 'TypeScript', url: '/typescript', group: 'chap2' },
-  { title: 'Basic React', url: '/react', group: 'chap3' },
-  { title: 'Component', url: '/component', group: 'chap3' },
-  { title: 'Props &amp; State', url: '/props-state', group: 'chap3' },
-  { title: 'Hooks', url: '/hooks', group: 'chap3' },
-  { title: 'Deploy react app', url: '/deploy', group: 'chap3' },
-  { title: 'Basic GraphQL', url: '/graphql', group: 'chap4' },
-  { title: 'JWT', url: '/jwt', group: 'chap5' },
-  { title: 'HTTPS', url: '/https', group: 'chap6' },
-  { title: 'Encrypt password', url: '/password', group: 'chap6' },
-  { title: 'Midterm', url: '/midterm', group: 'project' },
-  { title: 'Final', url: '/final', group: 'project' },
-]
-type Menus = {
+export type Menus = {
   [x in Group]: string
+}
+
+export const pages: Pages = {
+  introduction: { title: 'Introduction', group: 'chap0' },
+  outline: { title: 'Course outline', group: 'chap0' },
+  score: { title: 'Score', group: 'chap0' },
+  web1: { title: 'History of web', group: 'chap1' },
+  web2: { title: 'Current web technologies', group: 'chap1' },
+  web3: { title: 'Future and trends of web', group: 'chap1' },
+  tools: { title: 'Web developer tools', group: 'chap2' },
+  'html-css': { title: 'Basic web (HTML, CSS)', group: 'chap2' },
+  javascript: { title: 'JavaScript', group: 'chap2' },
+  typescript: { title: 'TypeScript', group: 'chap2' },
+  react: { title: 'Basic React', group: 'chap3' },
+  component: { title: 'Component', group: 'chap3' },
+  'props-state': { title: 'Props &amp; State', group: 'chap3' },
+  hooks: { title: 'Hooks', group: 'chap3' },
+  deploy: { title: 'Deploy react app', group: 'chap3' },
+  graphql: { title: 'Basic GraphQL', group: 'chap4' },
+  jwt: { title: 'JWT', group: 'chap5' },
+  https: { title: 'HTTPS', group: 'chap6' },
+  password: { title: 'Encrypt password', group: 'chap6' },
+  midterm: { title: 'Midterm', group: 'project' },
+  final: { title: 'Final', group: 'project' },
 }
 export const menus: Menus = {
   chap0: 'Course overview',

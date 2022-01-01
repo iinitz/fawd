@@ -3,28 +3,35 @@ import { Theme } from '@mui/material/styles'
 import Head from 'next/head'
 import { useEffect, useMemo } from 'react'
 
-import { menus, pages } from '../../contents'
+import {
+  menus, pages, Slug, slugs,
+} from '../../contents'
 import { useApp } from '../../contexts/AppContext'
 import { PageProvider } from '../../contexts/PageContext'
 
 import { PageActions } from './PageActions'
 import { PageContent } from './PageContent'
+import { PageHeader } from './PageHeader'
 
 export declare interface IPageProps {
-  index?: number
+  slug?: Slug
   title?: string
   children?: React.ReactNode
 }
-export const Page: React.FC<IPageProps> = ({ index, title = '', children }: IPageProps) => {
+export const Page: React.FC<IPageProps> = ({ slug, title = '', children }: IPageProps) => {
   const { setTitle } = useApp()
   const pageTitle = useMemo(
     () => {
-      if (index) {
-        return menus[pages[index].group]
+      if (slug) {
+        return menus[pages[slug].group]
       }
       return title
     },
-    [index, title],
+    [slug, title],
+  )
+  const index = useMemo(
+    () => slugs.findIndex((s) => s === slug),
+    [slug],
   )
   useEffect(
     () => {
@@ -35,7 +42,7 @@ export const Page: React.FC<IPageProps> = ({ index, title = '', children }: IPag
   return (
     <PageProvider>
       <Head>
-        <title>{index ? pages[index].title : pageTitle} - {process.env.NEXT_PUBLIC_APP_NAME}</title>
+        <title>{slug ? pages[slug].title : pageTitle} - {process.env.NEXT_PUBLIC_APP_NAME}</title>
       </Head>
       <Box
         display="flex"
@@ -47,8 +54,9 @@ export const Page: React.FC<IPageProps> = ({ index, title = '', children }: IPag
         }}
       >
         <PageContent>
+          <PageHeader>{slug ? pages[slug].title : pageTitle}</PageHeader>
           {children}
-          {index ? <PageActions index={index} /> : null}
+          {index !== -1 ? <PageActions index={index} /> : null}
         </PageContent>
       </Box>
     </PageProvider>

@@ -21,6 +21,7 @@ export const PageContent: React.FC<IPageContentProps> = ({ children }: IPageCont
     <Fragment>
       <Box id="content" display="flex" flexGrow={1} sx={{ overflowY: 'auto' }}>
         <Container
+          id="top"
           maxWidth="md"
           sx={{ display: 'flex', flexDirection: 'column' }}
         >
@@ -41,6 +42,7 @@ export const PageContent: React.FC<IPageContentProps> = ({ children }: IPageCont
                 {sections.map(({ id, title }, index) => (
                   <Link key={id} href={`#${id}`} color={currentElementIndexInViewport === index ? 'primary' : 'inherit'} underline="none" replace>{title}</Link>
                 ))}
+                <Link href="#top" color="textSecondary" underline="none">back to top</Link>
               </Box>
             </Box>
           )}

@@ -2,7 +2,7 @@ import Typography from '@mui/material/Typography'
 import { GetStaticProps, NextPage } from 'next'
 
 import { Code } from '../../components/Code'
-import { Page, PageHeader, PageSection } from '../../components/Page'
+import { Page, PageSection } from '../../components/Page'
 
 const code = `
 import React from "react";
@@ -35,8 +35,7 @@ class Expire extends React.Component {
 export default uniquePropHOC(["time", "seconds"])(Expire);
 `
 const Web3Page: NextPage = () => (
-  <Page index={5}>
-    <PageHeader>History of web</PageHeader>
+  <Page slug="web3">
     <PageSection id="web3.0" title="Web 3.0">
       <Typography>HTML</Typography>
       <Typography>URI</Typography>
