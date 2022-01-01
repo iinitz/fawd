@@ -46,7 +46,7 @@ export const ThemeProvider: React.FC<IThemeProviderProps> = ({ children }: IThem
   )
   useEffect(
     () => {
-      setMode((localStorage.getItem('mode') as ThemeMode) ?? ThemeMode.Light)
+      setMode((localStorage.getItem('mode') as ThemeMode) ?? ThemeMode.Dark)
     },
     [],
   )
