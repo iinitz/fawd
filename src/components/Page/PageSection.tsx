@@ -31,7 +31,7 @@ export const PageSection: React.FC<IPageSectionProps> = ({ id, title, children }
     [id, registerSection, title],
   )
   return (
-    <Box id={id} sx={{ pt: 4 }}>
+    <Box id={id} sx={{ pt: 6 }}>
       <Box ref={ref}>
         <Box display="flex" alignItems="center" sx={{ mb: 2 }}>
           <Typography variant="h4" sx={{ mr: 1 }}>{title}</Typography>
@@ -42,7 +42,7 @@ export const PageSection: React.FC<IPageSectionProps> = ({ id, title, children }
           </CopyToClipboard>
         </Box>
         {children}
-        <Box sx={{ mb: 4 }} />
+        {/* <Box sx={{ mb: 4 }} /> */}
       </Box>
     </Box>
   )

@@ -50,7 +50,7 @@ export const pages: Pages = {
   score: { title: 'Score', group: 'chap0' },
   web1: { title: 'History of web', group: 'chap1' },
   web2: { title: 'Current web technologies', group: 'chap1' },
-  web3: { title: 'Future and trends of web', group: 'chap1' },
+  web3: { title: 'Future of web', group: 'chap1' },
   tools: { title: 'Web developer tools', group: 'chap2' },
   'html-css': { title: 'Basic web (HTML, CSS)', group: 'chap2' },
   javascript: { title: 'JavaScript', group: 'chap2' },

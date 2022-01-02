@@ -51,7 +51,7 @@ export const Code: React.FC<ICodeProps> = ({ language, code }: ICodeProps) => {
       {({
         className, style, tokens, getLineProps, getTokenProps,
       }) => (
-        <Card variant="outlined" sx={{ my: 2 }}>
+        <Card variant="outlined" sx={{ mt: 2 }}>
           <CardContent sx={{ p: 0 }}>
             <Pre className={className} style={style}>
               {tokens.map((line, i) => (

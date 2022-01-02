@@ -39,9 +39,9 @@ export const PageActions: React.FC<IPageActionsProps> = ({ index }: IPageActions
     [router],
   )
   return (
-    <Box>
+    <Box sx={{ mt: 6 }}>
       <Divider sx={{ mb: 2 }} />
-      <Box display="flex" sx={{ pb: 2 }}>
+      <Box display="flex" sx={{ pb: 4 }}>
         {back.slug ? (
           <Button
             variant="outlined"

@@ -6,7 +6,7 @@ export declare interface IPageSubSectionProps {
   children?: React.ReactNode
 }
 export const PageSubSection: React.FC<IPageSubSectionProps> = ({ title, children }: IPageSubSectionProps) => (
-  <Box>
+  <Box sx={{ mt: 2 }}>
     <Typography variant="h6" gutterBottom>{title}</Typography>
     {children}
   </Box>

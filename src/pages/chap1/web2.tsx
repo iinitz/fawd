@@ -36,7 +36,7 @@ export default uniquePropHOC(["time", "seconds"])(Expire);
 `
 const Web2Page: NextPage = () => (
   <Page slug="web2">
-    <PageSection id="web2.0" title="Web 2.0">
+    <PageSection id="web2" title="Web 2.0">
       <Typography>HTML</Typography>
       <Typography>URI</Typography>
       <Typography>HTTP</Typography>

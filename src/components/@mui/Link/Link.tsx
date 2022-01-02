@@ -16,7 +16,7 @@ const LinkComponent = (
   const isActive = router.asPath === href
   return (
     <NextLink href={href} prefetch={prefetch} passHref replace={replace}>
-      <MuiLink ref={ref} color={isActive ? 'primary' : 'inherit'} {...props} />
+      <MuiLink ref={ref} color={isActive ? 'primary' : 'inherit'} underline="hover" {...props} />
     </NextLink>
   )
 }

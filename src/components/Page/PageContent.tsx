@@ -40,9 +40,9 @@ export const PageContent: React.FC<IPageContentProps> = ({ children }: IPageCont
                 <Typography variant="body1" color="textSecondary">Contents</Typography>
                 <Divider sx={{ my: 1 }} />
                 {sections.map(({ id, title }, index) => (
-                  <Link key={id} href={`#${id}`} color={currentElementIndexInViewport === index ? 'primary' : 'inherit'} underline="none" replace>{title}</Link>
+                  <Link key={id} href={`#${id}`} color={currentElementIndexInViewport === index ? 'primary' : 'inherit'} replace>{title}</Link>
                 ))}
-                <Link href="#top" color="textSecondary" underline="none">back to top</Link>
+                <Link href="#top" color="textSecondary">back to top</Link>
               </Box>
             </Box>
           )}

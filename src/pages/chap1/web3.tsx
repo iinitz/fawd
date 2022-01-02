@@ -2,7 +2,9 @@ import Typography from '@mui/material/Typography'
 import { GetStaticProps, NextPage } from 'next'
 
 import { Code } from '../../components/Code'
-import { Page, PageSection } from '../../components/Page'
+import {
+  Page, PageReferance, PageReferanceLink, PageSection,
+} from '../../components/Page'
 
 const code = `
 import React from "react";
@@ -36,13 +38,16 @@ export default uniquePropHOC(["time", "seconds"])(Expire);
 `
 const Web3Page: NextPage = () => (
   <Page slug="web3">
-    <PageSection id="web3.0" title="Web 3.0">
+    <PageSection id="web3" title="Web 3.0">
       <Typography>HTML</Typography>
       <Typography>URI</Typography>
       <Typography>HTTP</Typography>
       <Code language="tsx" code={code} />
       <Code language="tsx" code={code} />
     </PageSection>
+    <PageReferance>
+      <PageReferanceLink href="https://medium.com/polkadot-network/one-article-to-understand-the-past-present-and-future-of-web-3-0-5433962b7c3e" title="One Article to Understand The Past, Present, and Future of Web 3.0" />
+    </PageReferance>
   </Page>
 )
 export const getStaticProps: GetStaticProps = () => ({
