@@ -23,7 +23,7 @@ const ToolsPage: NextPage = () => (
       </PageSubSection>
     </PageSection>
     <PageSection id="nodejs" title="Node.js">
-      <PageSubSection title="Using NVM">
+      <PageSubSection title="Using NVM (Recommended)">
         <Link href="https://github.com/coreybutler/nvm-windows" color="primary" target="_blank">Windows (Download)</Link><br />
         <Link href="https://github.com/nvm-sh/nvm" color="primary" target="_blank">macOS &amp; Linux (Install)</Link>
       </PageSubSection>
@@ -32,7 +32,7 @@ const ToolsPage: NextPage = () => (
       </PageSubSection>
     </PageSection>
     <PageSection id="package-manager" title="Package manager">
-      <PageSubSection title="Yarn 1">
+      <PageSubSection title="Yarn 1 (Recommended)">
         <Link href="https://classic.yarnpkg.com/en/docs/install" color="primary" target="_blank">Install</Link>
       </PageSubSection>
       <PageSubSection title="NPM">

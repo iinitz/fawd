@@ -54,9 +54,9 @@ export const Page: React.FC<IPageProps> = ({ slug, title = '', children }: IPage
         }}
       >
         <PageContent>
-          <PageHeader>{slug ? pages[slug].title : pageTitle}</PageHeader>
+          {slug ? (<PageHeader>{pages[slug].title}</PageHeader>) : null}
           {children}
-          {index !== -1 ? <PageActions index={index} /> : null}
+          {index !== -1 ? (<PageActions index={index} />) : null}
         </PageContent>
       </Box>
     </PageProvider>

@@ -17,7 +17,7 @@ export declare interface IPageSectionProps {
 export const PageSection: React.FC<IPageSectionProps> = ({ id, title, children }: IPageSectionProps) => {
   const ref = useRef<HTMLDivElement>(null)
   const router = useRouter()
-  const { registerSection } = usePage()
+  const { registerSection, unregisterSection } = usePage()
   const handleRedirect = useCallback(
     async () => {
       await router.replace(`${router.pathname}#${id}`)
@@ -27,8 +27,11 @@ export const PageSection: React.FC<IPageSectionProps> = ({ id, title, children }
   useEffect(
     () => {
       registerSection({ id, title, ref })
+      return () => {
+        unregisterSection(id)
+      }
     },
-    [id, registerSection, title],
+    [id, registerSection, title, unregisterSection],
   )
   return (
     <Box id={id} sx={{ pt: 6 }}>
@@ -42,7 +45,6 @@ export const PageSection: React.FC<IPageSectionProps> = ({ id, title, children }
           </CopyToClipboard>
         </Box>
         {children}
-        {/* <Box sx={{ mb: 4 }} /> */}
       </Box>
     </Box>
   )

@@ -57,7 +57,7 @@ export const pages: Pages = {
   typescript: { title: 'TypeScript', group: 'chap2' },
   react: { title: 'Basic React', group: 'chap3' },
   component: { title: 'Component', group: 'chap3' },
-  'props-state': { title: 'Props &amp; State', group: 'chap3' },
+  'props-state': { title: 'Props and State', group: 'chap3' },
   hooks: { title: 'Hooks', group: 'chap3' },
   deploy: { title: 'Deploy react app', group: 'chap3' },
   graphql: { title: 'Basic GraphQL', group: 'chap4' },

@@ -57,7 +57,7 @@ export const AppLayout: React.FC<IAppLayoutProps> = memo(({ window, children }: 
         <List>
           <ListItem disablePadding>
             <ListItemButton href="/" selected={false}>
-              <ListItemText primary="Full-stack Web Developer" />
+              <ListItemText primary={<Typography variant="subtitle1">Full-stack Web Developer</Typography>} />
             </ListItemButton>
           </ListItem>
         </List>

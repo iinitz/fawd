@@ -54,8 +54,8 @@ export const PageActions: React.FC<IPageActionsProps> = ({ index }: IPageActions
               maxWidth: { xs: '45%', sm: '35%' },
             }}
           >
-            <Typography variant="body1">{back.title}</Typography>
-            <Typography variant="body2">&lt;&lt; Back</Typography>
+            <Typography variant="button">&lt;&lt; Back</Typography>
+            <Typography variant="subtitle1">{back.title}</Typography>
           </Button>
         ) : null}
         <Box flexGrow={1} sx={{ minWidth: { sm: '30%' } }} />
@@ -71,8 +71,8 @@ export const PageActions: React.FC<IPageActionsProps> = ({ index }: IPageActions
               maxWidth: { xs: '45%', sm: '35%' },
             }}
           >
-            <Typography variant="body1">{next.title}</Typography>
-            <Typography variant="body2">Next &gt;&gt;</Typography>
+            <Typography variant="button">Next &gt;&gt;</Typography>
+            <Typography variant="subtitle1">{next.title}</Typography>
           </Button>
         ) : null}
       </Box>

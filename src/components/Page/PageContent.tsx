@@ -37,12 +37,12 @@ export const PageContent: React.FC<IPageContentProps> = ({ children }: IPageCont
                 flexDirection="column"
                 sx={{ width: '200px', m: 4 }}
               >
-                <Typography variant="body1" color="textSecondary">Contents</Typography>
+                <Typography variant="subtitle1" color="textSecondary">CONTENTS</Typography>
                 <Divider sx={{ my: 1 }} />
                 {sections.map(({ id, title }, index) => (
-                  <Link key={id} href={`#${id}`} color={currentElementIndexInViewport === index ? 'primary' : 'inherit'} replace>{title}</Link>
+                  <Link key={id} href={`#${id}`} variant="subtitle1" color={currentElementIndexInViewport === index ? 'primary' : 'inherit'} replace>{title}</Link>
                 ))}
-                <Link href="#top" color="textSecondary">back to top</Link>
+                <Link href="#top" variant="subtitle2" color="textSecondary">back to top</Link>
               </Box>
             </Box>
           )}

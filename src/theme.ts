@@ -16,6 +16,12 @@ const baseTheme: ThemeOptions = {
   },
   typography: {
     fontFamily: '"Prompt",Sarabun,"Helvetica","Arial",sans-serif',
+    subtitle1: {
+      lineHeight: 1.5,
+    },
+    body1: {
+      fontFamily: '"Sarabun"',
+    },
   },
 }
 export const darkTheme = responsiveFontSizes(createTheme(mergeDeepRight<object, object>(baseTheme, {

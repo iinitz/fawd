@@ -1,5 +1,5 @@
 import {
-  createContext, useCallback, useContext, useMemo, useState,
+  createContext, useCallback, useContext, useEffect, useMemo, useState,
 } from 'react'
 
 declare interface ISection {
@@ -10,6 +10,7 @@ declare interface ISection {
 export declare interface IPageContext {
   sections: ISection[]
   registerSection: (section: ISection) => void
+  unregisterSection: (id: string) => void
 }
 export const PageContect = createContext({} as IPageContext)
 
@@ -17,19 +18,41 @@ export declare interface IPageProviderProps {
   children: React.ReactNode
 }
 export const PageProvider: React.FC<IPageProviderProps> = ({ children }: IPageProviderProps) => {
-  const [sections, setSections] = useState<ISection[]>([])
+  const [sections, setSections] = useState<(ISection | undefined)[]>([])
   const registerSection = useCallback(
     (section: ISection) => {
-      setSections((prev) => [...prev, section])
+      setSections((prev) => {
+        const index = prev.findIndex((s) => s === undefined)
+        if (index !== -1) {
+          return [...prev.slice(0, index), section, ...prev.slice(index + 1)]
+        }
+        return [...prev, section]
+      })
+    },
+    [],
+  )
+  const unregisterSection = useCallback(
+    (id: string) => {
+      setSections((prev) => {
+        const index = prev.findIndex((section) => section?.id === id)
+        return [...prev.slice(0, index), undefined, ...prev.slice(index + 1)]
+      })
     },
     [],
   )
   const value = useMemo(
     () => ({
-      sections,
+      sections: sections.filter((section) => section !== undefined) as ISection[],
       registerSection,
+      unregisterSection,
     }),
-    [registerSection, sections],
+    [registerSection, sections, unregisterSection],
+  )
+  useEffect(
+    () => () => {
+      setSections([])
+    },
+    [],
   )
   return (
     <PageContect.Provider value={value}>
