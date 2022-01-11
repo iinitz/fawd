@@ -183,71 +183,71 @@ const JavaScriptPage: NextPage = () => (
       <Typography gutterBottom>
         ECMAScript is commonly used for client-side scripting on the World Wide Web, and it is increasingly being used for writing server applications and services using Node.js
       </Typography>
-      <PageSubSection title="let and const">
-        <Code>const</Code> behave like <Code>let</Code> variables, except they cannot be <Text>reassigned</Text>
-        <CodeBlock language="javascript" code={letConstCode} />
-      </PageSubSection>
-      <PageSubSection title="String template">
-        The string interpolation in JavaScript is performed by template literals (strings wrapped in backticks <Code>`</Code>) and <Code>${'{'}expression{'}'}</Code> as a placeholder
-        <CodeBlock language="javascript" code={stringTemplateCode} />
-      </PageSubSection>
-      <PageSubSection title="Arrow function">
-        Arrow functions allow us to write shorter function syntax
-        <CodeBlock language="javascript" code={arrowFunctionCode} />
-      </PageSubSection>
-      <PageSubSection title="async/await">
-        <Typography gutterBottom>
-          async and await make promises easier to write
-        </Typography>
-        <Typography gutterBottom>
-          <Code>async</Code> makes a function return a Promise
-        </Typography>
-        <Typography gutterBottom>
-          <Code>await</Code> makes a function wait for a Promise
-        </Typography>
-        <CodeBlock language="javascript" code={asyncAwaitCode} />
-      </PageSubSection>
-      <PageSubSection title="Rest and Spread">
-        <Typography gutterBottom>
-          The rest operator (...) in object destructuring. At the moment, this operator only works for Array destructuring and in parameter definitions
-        </Typography>
-        <Typography gutterBottom>
-          The spread operator (...) in object literals. At the moment, this operator only works in Array literals and in function and method calls
-        </Typography>
-        <CodeBlock language="javascript" code={restAndSpreadCode} />
-      </PageSubSection>
-      <PageSubSection title="BigInt">
-        <Typography gutterBottom>
-          BigInts are a new numeric primitive in JavaScript that can represent integers with arbitrary precision. With BigInts, you can safely store and operate on large integers even beyond the safe integer limit for Numbers
-        </Typography>
-        <Typography gutterBottom>
-          To create a BigInt, add the <Code>n</Code> suffix to any integer literal. For example, <Code>123</Code> becomes <Code>123n</Code>. The global BigInt(number) function can be used to convert a Number into a BigInt. In other words, <Code>BigInt(123) === 123n</Code>. Let&apos;s use these two techniques to solve the problem we were having earlier
-        </Typography>
-        <CodeBlock language="javascript" code={bigIntCode} />
-      </PageSubSection>
-      <PageSubSection title="Nullish coalescing">
-        <Typography gutterBottom>
-          The nullish coalescing operator (<Code>??</Code>) acts very similar to the || operator, except that we don&apos;t use &quot;truthy&quot; when evaluating the operator
-        </Typography>
-        <Typography gutterBottom>
-          Instead we use the definition of <Text>nullish</Text>, meaning is the value strictly equal to <Text>null or undefined</Text>
-        </Typography>
-        <Typography gutterBottom>
-          So imagine the expression lhs ?? rhs: if lhs is not nullish, it evaluates to lhs. Otherwise, it evaluates to rhs
-        </Typography>
-        <Typography gutterBottom>
-          Explicitly, that means the values <Text>false, 0, NaN, and the empty string</Text> are all falsy values that are not nullish. When such falsy-but-not-nullish values are the left-hand side of a lhs ?? rhs, the expression evaluates to them instead of the right-hand side
-        </Typography>
-        <CodeBlock language="javascript" code={nullishCoalescingCode} />
-      </PageSubSection>
-      <PageSubSection title="Optional chaining">
-        An optional chain is a chain of one or more property accesses and function calls, the first of which begins with the token <Code>?.</Code>
-        <CodeBlock language="javascript" code={optionalChainingCode} />
-      </PageSubSection>
-      <PageSubSection title="Numeric separators">
-        Large numeric literals are difficult for the human eye to parse quickly, especially when there are lots of repeating digits
-        <CodeBlock language="javascript" code={numericSeparatorsCode} />
-      </PageSubSection>
+    </PageSection>
+    <PageSection id="let-const" title="let and const">
+      <Code>const</Code> behave like <Code>let</Code> variables, except they cannot be <Text>reassigned</Text>
+      <CodeBlock language="javascript" code={letConstCode} />
+    </PageSection>
+    <PageSection id="string-template" title="String template">
+      The string interpolation in JavaScript is performed by template literals (strings wrapped in backticks <Code>`</Code>) and <Code>${'{'}expression{'}'}</Code> as a placeholder
+      <CodeBlock language="javascript" code={stringTemplateCode} />
+    </PageSection>
+    <PageSection id="arrow-function" title="Arrow function">
+      Arrow functions allow us to write shorter function syntax
+      <CodeBlock language="javascript" code={arrowFunctionCode} />
+    </PageSection>
+    <PageSection id="async-await" title="async/await">
+      <Typography gutterBottom>
+        async and await make promises easier to write
+      </Typography>
+      <Typography gutterBottom>
+        <Code>async</Code> makes a function return a Promise
+      </Typography>
+      <Typography gutterBottom>
+        <Code>await</Code> makes a function wait for a Promise
+      </Typography>
+      <CodeBlock language="javascript" code={asyncAwaitCode} />
+    </PageSection>
+    <PageSection id="rest-spread" title="Rest and Spread">
+      <Typography gutterBottom>
+        The rest operator (...) in object destructuring. At the moment, this operator only works for Array destructuring and in parameter definitions
+      </Typography>
+      <Typography gutterBottom>
+        The spread operator (...) in object literals. At the moment, this operator only works in Array literals and in function and method calls
+      </Typography>
+      <CodeBlock language="javascript" code={restAndSpreadCode} />
+    </PageSection>
+    <PageSection id="numeric-separators" title="Numeric separators">
+      Large numeric literals are difficult for the human eye to parse quickly, especially when there are lots of repeating digits
+      <CodeBlock language="javascript" code={numericSeparatorsCode} />
+    </PageSection>
+    <PageSection id="bigint" title="BigInt">
+      <Typography gutterBottom>
+        BigInts are a new numeric primitive in JavaScript that can represent integers with arbitrary precision. With BigInts, you can safely store and operate on large integers even beyond the safe integer limit for Numbers
+      </Typography>
+      <Typography gutterBottom>
+        To create a BigInt, add the <Code>n</Code> suffix to any integer literal. For example, <Code>123</Code> becomes <Code>123n</Code>. The global BigInt(number) function can be used to convert a Number into a BigInt. In other words, <Code>BigInt(123) === 123n</Code>. Let&apos;s use these two techniques to solve the problem we were having earlier
+      </Typography>
+      <CodeBlock language="javascript" code={bigIntCode} />
+    </PageSection>
+    <PageSection id="nullish-coalescing" title="Nullish coalescing">
+      <Typography gutterBottom>
+        The nullish coalescing operator (<Code>??</Code>) acts very similar to the || operator, except that we don&apos;t use &quot;truthy&quot; when evaluating the operator
+      </Typography>
+      <Typography gutterBottom>
+        Instead we use the definition of <Text>nullish</Text>, meaning is the value strictly equal to <Text>null or undefined</Text>
+      </Typography>
+      <Typography gutterBottom>
+        So imagine the expression lhs ?? rhs: if lhs is not nullish, it evaluates to lhs. Otherwise, it evaluates to rhs
+      </Typography>
+      <Typography gutterBottom>
+        Explicitly, that means the values <Text>false, 0, NaN, and the empty string</Text> are all falsy values that are not nullish. When such falsy-but-not-nullish values are the left-hand side of a lhs ?? rhs, the expression evaluates to them instead of the right-hand side
+      </Typography>
+      <CodeBlock language="javascript" code={nullishCoalescingCode} />
+    </PageSection>
+    <PageSection id="optional-chaining" title="Optional chaining">
+      An optional chain is a chain of one or more property accesses and function calls, the first of which begins with the token <Code>?.</Code>
+      <CodeBlock language="javascript" code={optionalChainingCode} />
     </PageSection>
     <PageReferences>
       <PageReferencesLink href="http://latentflip.com/loupe" title="JavaScript's call stack/event loop/callback queue interact with each other" />
@@ -255,12 +255,12 @@ const JavaScriptPage: NextPage = () => (
       <PageReferencesLink href="https://en.wikipedia.org/wiki/ECMAScript" title="Wikipedia: ECMAScript" />
       <PageReferencesLink href="https://dmitripavlutin.com/string-interpolation-in-javascript/" title="String Interpolation in JavaScript" />
       <PageReferencesLink href="https://www.borntodev.com/2020/03/06/%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B9%83%E0%B8%88-await-async-%E0%B9%83%E0%B8%99-5-%E0%B8%99%E0%B8%B2%E0%B8%97%E0%B8%B5/" title="เข้าใจ Await / Async ใน 5 นาที" />
+      <PageReferencesLink href="https://v8.dev/features/numeric-separators" title="Numeric separators" />
       <PageReferencesLink href="https://v8.dev/features/bigint" title="BigInt: arbitrary-precision integers in JavaScript" />
       <PageReferencesLink href="https://v8.dev/features/object-rest-spread" title="Object rest and spread properties" />
       <PageReferencesLink href="https://2ality.com/2016/10/rest-spread-properties.html" title="ES2018: Rest/Spread Properties" />
       <PageReferencesLink href="https://v8.dev/features/nullish-coalescing" title="Nullish coalescing" />
       <PageReferencesLink href="https://v8.dev/features/optional-chaining" title="Optional chaining" />
-      <PageReferencesLink href="https://v8.dev/features/numeric-separators" title="Numeric separators" />
     </PageReferences>
   </Page>
 )
