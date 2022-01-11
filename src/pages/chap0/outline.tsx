@@ -1,4 +1,3 @@
-/* eslint-disable react/no-danger */
 import { GetStaticProps, NextPage } from 'next'
 
 import { Link } from '../../components/@mui/Link'

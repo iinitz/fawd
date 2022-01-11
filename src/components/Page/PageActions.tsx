@@ -52,10 +52,11 @@ export const PageActions: React.FC<IPageActionsProps> = ({ index }: IPageActions
               flexDirection: 'column',
               textTransform: 'none',
               maxWidth: { xs: '45%', sm: '35%' },
+              alignItems: 'flex-start',
             }}
           >
-            <Typography variant="button">&lt;&lt; Back</Typography>
-            <Typography variant="subtitle1">{back.title}</Typography>
+            <Typography variant="subtitle1" color="white">Back</Typography>
+            <Typography variant="subtitle1">&lt;&lt; {back.title}</Typography>
           </Button>
         ) : null}
         <Box flexGrow={1} sx={{ minWidth: { sm: '30%' } }} />
@@ -69,10 +70,11 @@ export const PageActions: React.FC<IPageActionsProps> = ({ index }: IPageActions
               flexDirection: 'column',
               textTransform: 'none',
               maxWidth: { xs: '45%', sm: '35%' },
+              alignItems: 'flex-end',
             }}
           >
-            <Typography variant="button">Next &gt;&gt;</Typography>
-            <Typography variant="subtitle1">{next.title}</Typography>
+            <Typography variant="subtitle1" color="white">Next</Typography>
+            <Typography variant="subtitle1">{next.title} &gt;&gt;</Typography>
           </Button>
         ) : null}
       </Box>
