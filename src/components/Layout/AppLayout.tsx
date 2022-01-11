@@ -1,4 +1,4 @@
-import HelpIcon from '@mui/icons-material/Help'
+import InfoIcon from '@mui/icons-material/Info'
 import MenuIcon from '@mui/icons-material/Menu'
 import Box from '@mui/material/Box'
 import Divider from '@mui/material/Divider'
@@ -92,7 +92,7 @@ export const AppLayout: React.FC<IAppLayoutProps> = memo(({ window, children }: 
                 <Divider orientation="vertical" flexItem sx={{ mr: 1 }} />
               </Box>
               <IconButton edge="end" onClick={handleRedirectToAbout}>
-                <HelpIcon />
+                <InfoIcon />
               </IconButton>
             </Box>
           </Box>

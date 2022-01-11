@@ -12,7 +12,7 @@ export declare interface IAppProviderProps {
   children: React.ReactNode
 }
 export const AppProvider: React.FC<IAppProviderProps> = ({ children }: IAppProviderProps) => {
-  const [title, setTitle] = useState<string>('FsWD')
+  const [title, setTitle] = useState<string>('')
   const value = useMemo(
     () => ({
       title,
