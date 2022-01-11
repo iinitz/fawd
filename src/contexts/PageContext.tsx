@@ -2,19 +2,19 @@ import {
   createContext, useCallback, useContext, useEffect, useMemo, useState,
 } from 'react'
 
-declare interface ISection {
+interface ISection {
   title: string
   id: string
   ref: React.RefObject<HTMLDivElement>
 }
-export declare interface IPageContext {
+export interface IPageContext {
   sections: ISection[]
   registerSection: (section: ISection) => void
   unregisterSection: (id: string) => void
 }
 export const PageContect = createContext({} as IPageContext)
 
-export declare interface IPageProviderProps {
+export interface IPageProviderProps {
   children: React.ReactNode
 }
 export const PageProvider: React.FC<IPageProviderProps> = ({ children }: IPageProviderProps) => {

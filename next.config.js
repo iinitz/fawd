@@ -8,6 +8,9 @@ module.exports = withPWA({
     disable: process.env.NODE_ENV !== 'production',
     dest: 'public',
     runtimeCaching,
-    buildExcludes: [/middleware-manifest.json$/]
+    buildExcludes: [/middleware-manifest.json$/],
+  },
+  images: {
+    domains: ['www.w3.org', 'upload.wikimedia.org', 'researchhubs.com'],
   },
 })

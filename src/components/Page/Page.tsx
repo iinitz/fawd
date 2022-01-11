@@ -13,7 +13,7 @@ import { PageActions } from './PageActions'
 import { PageContent } from './PageContent'
 import { PageHeader } from './PageHeader'
 
-export declare interface IPageProps {
+export interface IPageProps {
   slug?: Slug
   title?: string
   children?: React.ReactNode

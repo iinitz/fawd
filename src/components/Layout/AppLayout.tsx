@@ -23,7 +23,7 @@ import { ThemeSwitch } from '../@mui/ThemeSwitch'
 import { SidebarMenu } from '../SidebarMenu'
 
 const drawerWidth = 256
-export declare interface IAppLayoutProps {
+export interface IAppLayoutProps {
   window?: () => Window
   children?: React.ReactNode
 }

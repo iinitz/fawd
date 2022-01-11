@@ -2,7 +2,7 @@ import { memo } from 'react'
 
 import { ThemeProvider } from '../../contexts/ThemeContext'
 
-export declare interface IBaseLayoutProps {
+export interface IBaseLayoutProps {
   children?: React.ReactNode
 }
 const defaultProps: IBaseLayoutProps = {

@@ -5,7 +5,7 @@ import { Page, PageSubSection } from '../../components/Page'
 import { PageSection } from '../../components/Page/PageSection'
 
 const ToolsPage: NextPage = () => (
-  <Page slug="tools">
+  <Page slug="dev-tools">
     <PageSection id="browser" title="Browser">
       <PageSubSection title="Chrome">
         <Link href="https://www.google.com/chrome/" color="primary" target="_blank">Download</Link>

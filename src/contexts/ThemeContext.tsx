@@ -9,7 +9,7 @@ import {
 import { darkTheme, lightTheme } from '../theme'
 import { ThemeMode } from '../types'
 
-export declare interface IThemeContext {
+export interface IThemeContext {
   mode: ThemeMode
   currentTheme: ThemeMode
   setMode: React.Dispatch<React.SetStateAction<ThemeMode>>
@@ -17,7 +17,7 @@ export declare interface IThemeContext {
 }
 export const ThemeContext = createContext<IThemeContext>({} as IThemeContext)
 
-export declare interface IThemeProviderProps {
+export interface IThemeProviderProps {
   children: React.ReactNode
 }
 export const ThemeProvider: React.FC<IThemeProviderProps> = ({ children }: IThemeProviderProps) => {

@@ -8,7 +8,7 @@ import { Fragment, useMemo } from 'react'
 import { usePage } from '../../contexts/PageContext'
 import { Link } from '../@mui/Link'
 
-export declare interface IPageContentProps {
+export interface IPageContentProps {
   children?: React.ReactNode
 }
 export const PageContent: React.FC<IPageContentProps> = ({ children }: IPageContentProps) => {

@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 
-export declare interface IPageSubSectionProps {
+export interface IPageSubSectionProps {
   title: string
   children?: React.ReactNode
 }

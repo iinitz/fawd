@@ -2,7 +2,7 @@ import Divider from '@mui/material/Divider'
 import Typography from '@mui/material/Typography'
 import { Fragment } from 'react'
 
-export declare interface IPageHeaderProps {
+export interface IPageHeaderProps {
   children: React.ReactNode
 }
 export const PageHeader: React.FC<IPageHeaderProps> = ({ children }: IPageHeaderProps) => (

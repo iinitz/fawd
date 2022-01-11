@@ -2,13 +2,13 @@ import {
   createContext, useContext, useMemo, useState,
 } from 'react'
 
-export declare interface IAppContext {
+export interface IAppContext {
   title: string
   setTitle: React.Dispatch<React.SetStateAction<string>>
 }
 export const AppContext = createContext<IAppContext>({} as IAppContext)
 
-export declare interface IAppProviderProps {
+export interface IAppProviderProps {
   children: React.ReactNode
 }
 export const AppProvider: React.FC<IAppProviderProps> = ({ children }: IAppProviderProps) => {

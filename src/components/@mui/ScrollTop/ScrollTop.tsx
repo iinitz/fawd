@@ -6,7 +6,7 @@ import { Theme } from '@mui/material/styles'
 import useScrollTrigger from '@mui/material/useScrollTrigger'
 import { useCallback } from 'react'
 
-export declare interface IScrollTopProps {
+export interface IScrollTopProps {
   window?: () => Window
 }
 const defaultProps = {

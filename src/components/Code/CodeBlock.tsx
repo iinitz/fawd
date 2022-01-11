@@ -23,7 +23,7 @@ import {
   Line, LineContent, LineNo, Pre,
 } from './Line'
 
-export declare interface ICodeBlockProps {
+export interface ICodeBlockProps {
   language: Language
   code: string
 }

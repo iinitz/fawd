@@ -1,6 +1,6 @@
 import { PageSection } from './PageSection'
 
-export declare interface IPageReferencesProps {
+export interface IPageReferencesProps {
   children: React.ReactNode
 }
 export const PageReferences: React.FC<IPageReferencesProps> = ({ children }: IPageReferencesProps) => (

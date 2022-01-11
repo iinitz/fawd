@@ -1,10 +1,10 @@
 import { Link } from '../@mui/Link'
 
-export declare interface IPageReferencesLink {
+export interface IPageReferencesLinkProps {
   href: string
   title: string
 }
-export const PageReferencesLink: React.FC<IPageReferencesLink> = ({ href, title }: IPageReferencesLink) => (
+export const PageReferencesLink: React.FC<IPageReferencesLinkProps> = ({ href, title }: IPageReferencesLinkProps) => (
   <li>
     <Link href={href} target="_blank">{title}</Link>
   </li>

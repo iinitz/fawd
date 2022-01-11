@@ -7,7 +7,7 @@ import { useCallback, useMemo } from 'react'
 
 import { pages, slugs } from '../../contents'
 
-export declare interface IPageActionsProps {
+export interface IPageActionsProps {
   index: number
 }
 export const PageActions: React.FC<IPageActionsProps> = ({ index }: IPageActionsProps) => {

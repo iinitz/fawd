@@ -9,7 +9,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 import { usePage } from '../../contexts/PageContext'
 
-export declare interface IPageSectionProps {
+export interface IPageSectionProps {
   id: string
   title: string
   children: React.ReactNode
