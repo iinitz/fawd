@@ -31,7 +31,7 @@ const HistoryOfWebPage: NextPage = () => (
         </Typography>
         <Text>It is also commonly called a URL</Text>
       </PageSubSection>
-      <PageSubSection title="HTTP: Hypertext Transfer Protocol">
+      <PageSubSection title="HTTP: HyperText Transfer Protocol">
         Allows for the retrieval of linked resources from across the web
       </PageSubSection>
     </PageSection>
