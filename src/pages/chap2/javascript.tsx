@@ -9,6 +9,97 @@ import {
 } from '../../components/Page'
 import { PageSection } from '../../components/Page/PageSection'
 
+const cSyntaxCode = `
+// if syntax
+const number = 10
+if (number % 2 === 0) {
+  console.log('Even number')
+}
+
+// switch syntax
+const role = 'Admin'
+switch (role) {
+  case 'Admin': {
+    console.log('Admin user')
+    break
+  }
+  case 'Staff': {
+    console.log('Staff user')
+    break
+  }
+  default: {
+    console.log('Customer user')
+  }
+}
+
+// for syntax
+for (let i = 0; i < 10; i++) {
+  console.log(i)
+}
+`
+const semicolonCode = `
+console.log('Hello')
+// same as
+console.log('Hello');
+`
+const dynamicTypingCode = `
+let data
+console.log(data) // undefined
+data = 'Alice'
+console.log(data) // Alice
+data = 10
+console.log(data) // 10
+`
+const firstClassFunctionCode = `
+// passing function as arguments
+const numbers = [1, 2, 3, 4]
+numbers.forEach(function (value) {
+  console.log(value)
+})
+
+// returning as the values
+function greaterThan(number) {
+  return function (input) {
+    if (input > number) {
+      console.log(\`\${input} > \${number}\`)
+    } else {
+      console.log(\`\${input} <= \${number}\`)
+    }
+  }
+}
+
+// assigning to variables
+const greaterThanTen = greaterThan(10)
+console.log(greaterThanTen(5)) // 5 <= 10
+`
+const ooCode = `
+class Rectangle {
+  constructor(height, width) {
+    this.height = height
+    this.width = width
+  }
+  // Getter
+  get area() {
+    return this.calcArea()
+  }
+  // Method
+  calcArea() {
+    return this.height * this.width
+  }
+}
+
+const square = new Rectangle(10, 10)
+
+console.log(square.area) // 100
+`
+const dataTypesCode = `
+const length = 16 // number
+const lastName = 'Johnson' // string
+const user = { firstName: 'John', lastName: 'Doe' } // object
+const isAdmin = false // boolean
+const numbers = [1, 2, 3, 4] // array
+let name // undefined
+`
 const letConstCode = `
 let name = 'Alice'
 name = 'Bob'
@@ -156,24 +247,35 @@ const JavaScriptPage: NextPage = () => (
       </PageSubSection>
       <PageSubSection title="Imperative and structured">
         Support much of the structured programming syntax from C
+        <CodeBlock language="javascript" code={cSyntaxCode} />
       </PageSubSection>
       <PageSubSection title="Semicolon (;)">
         Automatic semicolon insertion
+        <CodeBlock language="javascript" code={semicolonCode} />
       </PageSubSection>
       <PageSubSection title="Dynamic typing">
         Dynamically typed like most other scripting languages
+        <CodeBlock language="javascript" code={dynamicTypingCode} />
       </PageSubSection>
       <PageSubSection title="First-class functions">
         Passing function as arguments, returning as the values and assigning to variables or storing in data structures
+        <CodeBlock language="javascript" code={firstClassFunctionCode} />
       </PageSubSection>
       <PageSubSection title="Non blocking I/O (Asynchronous)">
         JavaScript is single threaded which means only one statement is executed at a time, that uses something called <Link href="http://latentflip.com/loupe" target="_blank"><Text>Eventloop</Text></Link> for Asynchronous calls
       </PageSubSection>
       <PageSubSection title="Object-oriented programming">
         Prototype-based object-oriented and class syntax
+        <CodeBlock language="javascript" code={ooCode} />
       </PageSubSection>
     </PageSection>
-    <PageSection id="es-syntax" title="ES Syntax">
+    <PageSection id="data-types" title="Data types">
+      <CodeBlock language="javascript" code={dataTypesCode} />
+      <PageSubSection title="Undefined">
+        In JavaScript, a variable without a value, has the value <Code>undefined</Code>. The type is also <Code>undefined</Code>
+      </PageSubSection>
+    </PageSection>
+    <PageSection id="ecma-script" title="ECMA Script">
       <Typography gutterBottom>
         ECMA Script (or ES) is a JavaScript standard meant to ensure the interoperability of web pages across different web browsers
       </Typography>
@@ -184,7 +286,7 @@ const JavaScriptPage: NextPage = () => (
         ECMAScript is commonly used for client-side scripting on the World Wide Web, and it is increasingly being used for writing server applications and services using Node.js
       </Typography>
     </PageSection>
-    <PageSection id="let-const" title="let and const">
+    <PageSection id="let-const" title="Let and Const">
       <Code>const</Code> behave like <Code>let</Code> variables, except they cannot be <Text>reassigned</Text>
       <CodeBlock language="javascript" code={letConstCode} />
     </PageSection>
@@ -196,7 +298,7 @@ const JavaScriptPage: NextPage = () => (
       Arrow functions allow us to write shorter function syntax
       <CodeBlock language="javascript" code={arrowFunctionCode} />
     </PageSection>
-    <PageSection id="async-await" title="async/await">
+    <PageSection id="async-await" title="Async/Await">
       <Typography gutterBottom>
         async and await make promises easier to write
       </Typography>
@@ -252,6 +354,7 @@ const JavaScriptPage: NextPage = () => (
     <PageReferences>
       <PageReferencesLink href="http://latentflip.com/loupe" title="JavaScript's call stack/event loop/callback queue interact with each other" />
       <PageReferencesLink href="https://www.youtube.com/watch?v=8aGhZQkoFbQ" title="Youtube: What the heck is the event loop anyway? | Philip Roberts | JSConf EU" />
+      <PageReferencesLink href="https://www.w3schools.com/js/js_datatypes.asp" title="W3Schools: JavaScript Data Types" />
       <PageReferencesLink href="https://en.wikipedia.org/wiki/ECMAScript" title="Wikipedia: ECMAScript" />
       <PageReferencesLink href="https://dmitripavlutin.com/string-interpolation-in-javascript/" title="String Interpolation in JavaScript" />
       <PageReferencesLink href="https://www.borntodev.com/2020/03/06/%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B9%83%E0%B8%88-await-async-%E0%B9%83%E0%B8%99-5-%E0%B8%99%E0%B8%B2%E0%B8%97%E0%B8%B5/" title="เข้าใจ Await / Async ใน 5 นาที" />

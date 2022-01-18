@@ -434,8 +434,8 @@ const HtmlCssPage: NextPage = () => (
       </ul>
     </PageSection>
     <PageReferences>
-      <PageReferencesLink href="https://www.w3schools.com/html/" title="W3Schools - HTML Tutorial" />
-      <PageReferencesLink href="https://www.w3schools.com/css/" title="W3Schools - CSS Tutorial" />
+      <PageReferencesLink href="https://www.w3schools.com/html/" title="W3Schools: HTML Tutorial" />
+      <PageReferencesLink href="https://www.w3schools.com/css/" title="W3Schools: CSS Tutorial" />
     </PageReferences>
   </Page>
 )
