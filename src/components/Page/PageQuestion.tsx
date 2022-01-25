@@ -9,10 +9,13 @@ import { PageSubSection } from './PageSubSection'
 
 export interface IPageQuestionProps {
   question: string
-  answer: React.ReactNode
+  detail?: React.ReactNode
+  answer?: React.ReactNode
   children?: React.ReactNode
 }
-export const PageQuestion: React.FC<IPageQuestionProps> = ({ question, answer, children }: IPageQuestionProps) => {
+export const PageQuestion: React.FC<IPageQuestionProps> = ({
+  question, detail, answer, children,
+}: IPageQuestionProps) => {
   const [open, setOpen] = useState<boolean>(false)
   const toggleShowAnswer = useCallback(
     () => {
@@ -22,6 +25,7 @@ export const PageQuestion: React.FC<IPageQuestionProps> = ({ question, answer, c
   )
   return (
     <PageSubSection title={question}>
+      {detail}
       {open ? (
         <Fragment>
           <Button onClick={toggleShowAnswer}>Hide answer</Button>

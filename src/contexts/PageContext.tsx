@@ -12,7 +12,7 @@ export interface IPageContext {
   registerSection: (section: ISection) => void
   unregisterSection: (id: string) => void
 }
-export const PageContect = createContext({} as IPageContext)
+export const PageContext = createContext<IPageContext>({} as IPageContext)
 
 export interface IPageProviderProps {
   children: React.ReactNode
@@ -55,10 +55,10 @@ export const PageProvider: React.FC<IPageProviderProps> = ({ children }: IPagePr
     [],
   )
   return (
-    <PageContect.Provider value={value}>
+    <PageContext.Provider value={value}>
       {children}
-    </PageContect.Provider>
+    </PageContext.Provider>
   )
 }
 
-export const usePage = () => useContext(PageContect)
+export const usePage = () => useContext(PageContext)

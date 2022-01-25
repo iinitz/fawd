@@ -4,6 +4,7 @@ import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
+import CardHeader from '@mui/material/CardHeader'
 import Divider from '@mui/material/Divider'
 import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
@@ -13,7 +14,9 @@ import { Theme } from '@mui/material/styles'
 import Highlight, { defaultProps, Language } from 'prism-react-renderer'
 import darkTheme from 'prism-react-renderer/themes/vsDark'
 import lightTheme from 'prism-react-renderer/themes/vsLight'
-import { useCallback, useMemo, useState } from 'react'
+import {
+  Fragment, useCallback, useMemo, useState,
+} from 'react'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 import { useTheme } from '../../contexts/ThemeContext'
@@ -24,10 +27,11 @@ import {
 } from './Line'
 
 export interface ICodeBlockProps {
+  file?: string
   language: Language
   code: string
 }
-export const CodeBlock: React.FC<ICodeBlockProps> = ({ language, code }: ICodeBlockProps) => {
+export const CodeBlock: React.FC<ICodeBlockProps> = ({ file, language, code }: ICodeBlockProps) => {
   const [copyLabel, setCopyLabel] = useState<string>('Copy code')
   const { currentTheme } = useTheme()
   const handleCopy = useCallback(
@@ -52,6 +56,12 @@ export const CodeBlock: React.FC<ICodeBlockProps> = ({ language, code }: ICodeBl
         className, style, tokens, getLineProps, getTokenProps,
       }) => (
         <Card variant="outlined" sx={{ my: 2 }}>
+          {file ? (
+            <Fragment>
+              <CardHeader title={file} titleTypographyProps={{ variant: 'subtitle1' }} sx={{ py: 1 }} />
+              <Divider />
+            </Fragment>
+          ) : null}
           <CardContent sx={{ p: 0 }}>
             <Pre className={className} style={style}>
               {tokens.map((line, i) => (
