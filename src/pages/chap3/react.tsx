@@ -3,7 +3,9 @@ import { GetStaticProps, NextPage } from 'next'
 
 import { Code, CodeBlock } from '../../components/Code'
 import { Text } from '../../components/Highlight'
-import { Page, PageReferences, PageReferencesLink } from '../../components/Page'
+import {
+  Page, PageReferences, PageReferencesLink, PageSubSection,
+} from '../../components/Page'
 import { PageSection } from '../../components/Page/PageSection'
 
 const jsxCode = `
@@ -51,6 +53,50 @@ const Gallery = () => (
   </section>
 )
 `
+const fragmentEmptyTagCode = `
+const Profile = ({ name, imageUrl }) => (
+  <>
+    <h3>{name}</h3>
+    <img
+      className="avatar"
+      src={imageUrl}
+      alt={name}
+    />
+  </>
+)
+`
+const fragmentReactCode = `
+import { Fragment } from 'react'
+
+const Profile = ({ name, imageUrl }) => (
+  <Fragment>
+    <h3>{name}</h3>
+    <img
+      className="avatar"
+      src={imageUrl}
+      alt={name}
+    />
+  </Fragment>
+)
+`
+const renderingListsCode = `
+const Students = () => (
+  <>
+    <h3>Students</h3>
+    {data.map((student) => (
+      <Profile
+        key={student.studentId}
+        student={student}
+      />
+    ))}
+  </>
+)
+`
+const styleCode = `
+<img className="avatar" />
+
+<img style={{ borderRadius: '50%' }} />
+`
 const ReactPage: NextPage = () => (
   <Page slug="react">
     <PageSection id="what-is-react" title="What is React?">
@@ -75,6 +121,35 @@ const ReactPage: NextPage = () => (
       Just like you can pass some information to the browser <Code>&lt;img&gt;</Code> tag, you can also pass information to your own components like <Code>&lt;Profile&gt;</Code>. Such information is called props. Here, three <Code>&lt;Profile&gt;</Code>s receive different props
       <CodeBlock language="jsx" code={propsCode} />
       You might wonder why className=&quot;avatar&quot; uses quotes but src={'{imageUrl}'} uses curly braces. In JSX, curly braces are like a &quot;window into JavaScript&quot;. They let you run a bit of JavaScript right in your markup! So src={'{imageUrl}'} reads the imageUrl prop declared on the first line and passed from the parent Gallery component
+    </PageSection>
+    <PageSection id="fragment" title="Fragment">
+      <PageSubSection title="Empty tag fragment">
+        <CodeBlock language="jsx" code={fragmentEmptyTagCode} />
+      </PageSubSection>
+      <PageSubSection title="Fragment component">
+        <CodeBlock language="jsx" code={fragmentReactCode} />
+      </PageSubSection>
+    </PageSection>
+    <PageSection id="rendering-lists" title="Rendering lists">
+      <Typography gutterBottom>
+        For each item in a list, you should pass a string or a number that uniquely identifies that item among its siblings
+      </Typography>
+      <Typography gutterBottom>
+        Usually, a key should be coming from your data, such as a database ID
+      </Typography>
+      <Typography gutterBottom>
+        React will rely on your keys to understand what happened if you later insert, delete, or reorder the items
+      </Typography>
+      <CodeBlock language="jsx" code={renderingListsCode} />
+    </PageSection>
+    <PageSection id="style" title="Style">
+      <Typography gutterBottom>
+        In React, you specify a CSS class with <Code>className</Code>. It works the same way as HTML <Code>class</Code> attribute
+      </Typography>
+      <Typography gutterBottom>
+        Inline CSS styles in JSX. React does not require you to use inline styles (CSS classes work great for most cases). But when you need an inline style, you pass an object to the <Code>style</Code> attribute
+      </Typography>
+      <CodeBlock language="jsx" code={styleCode} />
     </PageSection>
     <PageReferences>
       <PageReferencesLink href="https://beta.reactjs.org/learn" title="React Docs: Quick Start" />
