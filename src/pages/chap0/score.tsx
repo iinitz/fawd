@@ -3,6 +3,7 @@ import AlertTitle from '@mui/material/AlertTitle'
 import { Theme } from '@mui/material/styles'
 import { GetStaticProps, NextPage } from 'next'
 
+import { Link } from '../../components/@mui/Link'
 import { Page, PageSection, PageSubSection } from '../../components/Page'
 
 const ScorePage: NextPage = () => (
@@ -20,10 +21,17 @@ const ScorePage: NextPage = () => (
           <li>Post content page</li>
           <li>Tag/Category page</li>
           <li>Author page</li>
+          <li>View comment/Create comment</li>
         </ul>
       </PageSubSection>
       <PageSubSection title="Deadline">
-        27 Feb 2022 23:59:59
+        <del>27 Feb 2022 23:59:59</del> 15 Mar 2022 23:59:59
+      </PageSubSection>
+      <PageSubSection title="Project detail">
+        <ul>
+          <li>CMS API endpoint: <Link href="https://fswd-wp.devnss.com/wp-json/wp/v2">https://fswd-wp.devnss.com/wp-json/wp/v2</Link></li>
+          <li>Wordpress API referance: <Link href="https://developer.wordpress.org/rest-api/reference/">https://developer.wordpress.org/rest-api/reference/</Link></li>
+        </ul>
       </PageSubSection>
     </PageSection>
     <PageSection id="final-project" title="Final project (40%)">
@@ -33,10 +41,13 @@ const ScorePage: NextPage = () => (
             Project members: 4 members
           </AlertTitle>
         </Alert>
-        Project detail: TBD
+        Implement any system support ITKMITL
+      </PageSubSection>
+      <PageSubSection title="Proposal &amp; Requirements">
+        28 Feb 2022 23:59:59
       </PageSubSection>
       <PageSubSection title="Deadline">
-        1 May 2022 23:59:59
+        <del>1 May 2022 23:59:59</del> 27 May 2022 23:59:59
       </PageSubSection>
     </PageSection>
     <PageSection id="final-exam" title="Final exam (30%)">

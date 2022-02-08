@@ -49,7 +49,7 @@ const useFetch = (url) => {
   return data
 }
 
-export default useFetch;
+export default useFetch
 `
 const useContextCode = `
 const value = useContext(MyContext)

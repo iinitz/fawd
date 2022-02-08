@@ -46,10 +46,10 @@ const StatePage: NextPage = () => (
   <Page slug="state">
     <PageSection id="use-state" title="useState">
       <Typography gutterBottom>
-        Returns a stateful value, and a function to update it.
+        Returns a stateful value, and a function to update it
       </Typography>
       <Typography gutterBottom>
-        During the initial render, the returned state (<Code>state</Code>) is the same as the value passed as the first argument (<Code>initialState</Code>).
+        During the initial render, the returned state (<Code>state</Code>) is the same as the value passed as the first argument (<Code>initialState</Code>)
       </Typography>
       <Typography>
         The <Code>setState</Code> function is used to update the state. It accepts a new state value and enqueues a re-render of the component
