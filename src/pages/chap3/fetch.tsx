@@ -57,7 +57,7 @@ const FetchPage: NextPage = () => (
       </ul>
     </PageSection>
     <PageReferences>
-      <PageReferencesLink href="https://developer.mozilla.org/en-US/docs/Web/API/fetch" title="React Docs: Context" />
+      <PageReferencesLink href="https://developer.mozilla.org/en-US/docs/Web/API/fetch" title="Fetch API" />
     </PageReferences>
   </Page>
 )
