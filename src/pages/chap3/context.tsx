@@ -7,7 +7,7 @@ import { Page, PageReferences, PageReferencesLink } from '../../components/Page'
 import { PageSection } from '../../components/Page/PageSection'
 
 const createContextCode = `
-import { useContext } from 'react'
+import { createContext } from 'react'
 
 const const MyContext = createContext(defaultValue)
 `
