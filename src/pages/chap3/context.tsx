@@ -9,7 +9,7 @@ import { PageSection } from '../../components/Page/PageSection'
 const createContextCode = `
 import { createContext } from 'react'
 
-const const MyContext = createContext(defaultValue)
+const MyContext = createContext(defaultValue)
 `
 const contextProviderCode = `
 <MyContext.Provider value={/* some value */}>
