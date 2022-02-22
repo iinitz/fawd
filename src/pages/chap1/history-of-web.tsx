@@ -1,5 +1,5 @@
 import Typography from '@mui/material/Typography'
-import { GetStaticProps, NextPage } from 'next'
+import { NextPage } from 'next'
 
 import { Text } from '../../components/Highlight'
 import {
@@ -60,8 +60,5 @@ const HistoryOfWebPage: NextPage = () => (
     </PageReferences>
   </Page>
 )
-export const getStaticProps: GetStaticProps = () => ({
-  props: { },
-})
 
 export default HistoryOfWebPage

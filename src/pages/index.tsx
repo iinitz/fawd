@@ -2,7 +2,7 @@ import GithubIcon from '@mui/icons-material/GitHub'
 import Box from '@mui/material/Box'
 import Divider from '@mui/material/Divider'
 import Typography from '@mui/material/Typography'
-import { GetStaticProps, NextPage } from 'next'
+import { NextPage } from 'next'
 
 import { Link } from '../components/@mui/Link'
 import { Page } from '../components/Page'
@@ -29,8 +29,5 @@ const IndexPage: NextPage = () => (
     </Box>
   </Page>
 )
-export const getStaticProps: GetStaticProps = () => ({
-  props: { },
-})
 
 export default IndexPage

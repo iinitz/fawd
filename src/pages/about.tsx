@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
-import { GetStaticProps, NextPage } from 'next'
+import { NextPage } from 'next'
 
 import {
   BasicInfo, Contact, Education, Experience, Skill,
@@ -32,8 +32,5 @@ const AboutPage: NextPage = () => (
     </Grid>
   </Page>
 )
-export const getStaticProps: GetStaticProps = () => ({
-  props: { },
-})
 
 export default AboutPage

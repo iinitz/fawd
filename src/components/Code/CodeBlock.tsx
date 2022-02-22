@@ -26,12 +26,13 @@ import {
   Line, LineContent, LineNo, Pre,
 } from './Line'
 
+type SupportedLanguages = Language | 'none'
 export interface ICodeBlockProps {
-  file?: string
-  language: Language
+  title?: string
+  language: SupportedLanguages
   code: string
 }
-export const CodeBlock: React.FC<ICodeBlockProps> = ({ file, language, code }: ICodeBlockProps) => {
+export const CodeBlock: React.FC<ICodeBlockProps> = ({ title, language, code }: ICodeBlockProps) => {
   const [copyLabel, setCopyLabel] = useState<string>('Copy code')
   const { currentTheme } = useTheme()
   const handleCopy = useCallback(
@@ -51,14 +52,14 @@ export const CodeBlock: React.FC<ICodeBlockProps> = ({ file, language, code }: I
     [currentTheme],
   )
   return (
-    <Highlight {...defaultProps} theme={highlightTheme} language={language} code={code.trim()}>
+    <Highlight {...defaultProps} theme={highlightTheme} language={language as Language} code={code.trim()}>
       {({
         className, style, tokens, getLineProps, getTokenProps,
       }) => (
         <Card variant="outlined" sx={{ my: 2 }}>
-          {file ? (
+          {title ? (
             <Fragment>
-              <CardHeader title={file} titleTypographyProps={{ variant: 'subtitle1' }} sx={{ py: 1 }} />
+              <CardHeader title={title} titleTypographyProps={{ variant: 'subtitle1' }} sx={{ py: 1 }} />
               <Divider />
             </Fragment>
           ) : null}

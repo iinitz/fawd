@@ -1,5 +1,5 @@
 import Typography from '@mui/material/Typography'
-import { GetStaticProps, NextPage } from 'next'
+import { NextPage } from 'next'
 
 import { Link } from '../../components/@mui/Link'
 import { Code, CodeBlock } from '../../components/Code'
@@ -76,8 +76,5 @@ const StatePage: NextPage = () => (
     </PageReferences>
   </Page>
 )
-export const getStaticProps: GetStaticProps = () => ({
-  props: { },
-})
 
 export default StatePage

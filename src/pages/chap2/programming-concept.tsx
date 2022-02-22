@@ -1,5 +1,5 @@
 import Typography from '@mui/material/Typography'
-import { GetStaticProps, NextPage } from 'next'
+import { NextPage } from 'next'
 
 import { CodeBlock } from '../../components/Code'
 import { Text } from '../../components/Highlight'
@@ -126,8 +126,5 @@ const ProgrammingConceptPage: NextPage = () => (
     </PageReferences>
   </Page>
 )
-export const getStaticProps: GetStaticProps = () => ({
-  props: { },
-})
 
 export default ProgrammingConceptPage

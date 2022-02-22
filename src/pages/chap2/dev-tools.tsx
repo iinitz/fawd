@@ -1,4 +1,4 @@
-import { GetStaticProps, NextPage } from 'next'
+import { NextPage } from 'next'
 
 import { Link } from '../../components/@mui/Link'
 import { Page, PageSubSection } from '../../components/Page'
@@ -41,8 +41,5 @@ const ToolsPage: NextPage = () => (
     </PageSection>
   </Page>
 )
-export const getStaticProps: GetStaticProps = () => ({
-  props: { },
-})
 
 export default ToolsPage

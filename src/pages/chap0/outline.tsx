@@ -1,4 +1,4 @@
-import { GetStaticProps, NextPage } from 'next'
+import { NextPage } from 'next'
 
 import { Link } from '../../components/@mui/Link'
 import { Page, PageSection } from '../../components/Page'
@@ -62,8 +62,5 @@ const OutlinePage: NextPage = () => (
     </PageSection>
   </Page>
 )
-export const getStaticProps: GetStaticProps = () => ({
-  props: { },
-})
 
 export default OutlinePage

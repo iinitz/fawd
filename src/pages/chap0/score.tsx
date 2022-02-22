@@ -1,7 +1,7 @@
 import Alert from '@mui/material/Alert'
 import AlertTitle from '@mui/material/AlertTitle'
 import { Theme } from '@mui/material/styles'
-import { GetStaticProps, NextPage } from 'next'
+import { NextPage } from 'next'
 
 import { Link } from '../../components/@mui/Link'
 import { Page, PageSection, PageSubSection } from '../../components/Page'
@@ -57,8 +57,5 @@ const ScorePage: NextPage = () => (
     </PageSection>
   </Page>
 )
-export const getStaticProps: GetStaticProps = () => ({
-  props: { },
-})
 
 export default ScorePage

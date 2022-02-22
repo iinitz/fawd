@@ -1,5 +1,5 @@
 import Typography from '@mui/material/Typography'
-import { GetStaticProps, NextPage } from 'next'
+import { NextPage } from 'next'
 
 import {
   Page, PageImage, PageReferences, PageReferencesLink, PageSection,
@@ -40,8 +40,5 @@ const CurrentWebTechnologiesPage: NextPage = () => (
     </PageReferences>
   </Page>
 )
-export const getStaticProps: GetStaticProps = () => ({
-  props: { },
-})
 
 export default CurrentWebTechnologiesPage
