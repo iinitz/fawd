@@ -51,8 +51,37 @@ const ScorePage: NextPage = () => (
       </PageSubSection>
     </PageSection>
     <PageSection id="final-exam" title="Final exam (30%)">
-      <PageSubSection title="Exam topics">
-        TBD
+      <PageSubSection title="Exam detail">
+        <Alert severity="info" sx={{ border: (theme: Theme) => `1px solid ${theme.palette.info.main}`, my: 2, '& > *': { alignItems: 'center' } }}>
+          <AlertTitle sx={{ m: 0 }}>
+            You can open any book or search from the internet for this exam
+          </AlertTitle>
+        </Alert>
+        Implement front-end and back-end from requirements and resources
+        <ul>
+          <li>Implement front-end (React) base on wireframe</li>
+          <li>Implement back-end (GraphQL) from Mongoose schema</li>
+          <li>Connect front-end and back-end</li>
+        </ul>
+      </PageSubSection>
+      <PageSubSection title="Instructions">
+        <ul>
+          <li>Clone exam repo to your computer (link available at exam time)</li>
+          <li>Implement front-end under folder &quot;web&quot; and front-end should run on Port 3000</li>
+          <li>Implement back-end under folder &quot;api&quot; and back-end should run on Port 3001</li>
+          <li>Push all exam code to you github repo and create merge request to exam repo (link in bullet one)</li>
+          <li>Other details, features and requirements available in README.md in exam repo</li>
+        </ul>
+      </PageSubSection>
+      <PageSubSection title="Score">
+        <ul>
+          <li>Front-end (30%): Component match with wireframe, correct route/path</li>
+          <li>Back-end (30%): GraphQL queries and mutations working correctly</li>
+          <li>Features (40%): Connect front-end and back-end, completed requirements and features</li>
+        </ul>
+      </PageSubSection>
+      <PageSubSection title="Exam time">
+        19 May 2022 09:30-12:30
       </PageSubSection>
     </PageSection>
   </Page>
